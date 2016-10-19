@@ -27,7 +27,7 @@
       "name": "Michał Łaszczewski"
     }
   ],
-  "name": "reactive-dom",
+  "name": "reactiveobserver-reactive-dom",
   "optionalDependencies": {},
   "readme": "README.md",
   "repository": {
