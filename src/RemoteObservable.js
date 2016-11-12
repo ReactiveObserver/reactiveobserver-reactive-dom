@@ -8,8 +8,8 @@ class RemoteObservable extends rd.Observable {
     this.service = service
     this.what = what
     this.connection = dataSource.connection
-    this.observer = (signal,args) => {
-      if(signal == 'set') this.update(args)
+    this.observer = (signal,...args) => {
+      if(signal == 'set') this.update(args[0])
     }
   }
 
@@ -30,7 +30,7 @@ class RemoteObservable extends rd.Observable {
     this.connection.observe(this.service, this.what, this.observer)
   }
   handleUnobserved() {
-    console.trace("UNOBSERVE")
+    //console.trace("UNOBSERVE")
     this.connection.unobserve(this.service, this.what, this.observer)
   }
 }
